@@ -9,7 +9,6 @@ class App extends React.Component{
 	state = {
 		errorMsg: "",
 		welcomeMsg: "",
-		loadingMap: true,
 		userLatitude: null,
 		userLongitude: null,
 		center: {
@@ -34,15 +33,6 @@ class App extends React.Component{
 			(err) => this.setState({ errorMsg: err.message })
 		);
 	};
-
-
-	hideLoader = () => {
-		setTimeout(()=> {
-			this.setState({
-				loadingMap: false
-			})
-		}, 1500);
-	}
 
 
 	onFormSubmit = async (term) => {
@@ -116,8 +106,6 @@ class App extends React.Component{
 					<SearchBar onFormSubmit={ this.onFormSubmit } />
 					<div className="map-wrapper">
 						<HotSpotMap
-							loadingMap={ this.state.loadingMap }
-							hideLoader={ this.hideLoader }
 							noneFoundMsg={ this.state.noneFoundMsg }
 							selHotspots={ this.state.selHotspots }
 							userLatitude={ this.state.userLatitude }

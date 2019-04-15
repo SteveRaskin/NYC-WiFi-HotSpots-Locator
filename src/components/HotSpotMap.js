@@ -6,30 +6,24 @@ import Loading from './Loading.js'
 
 const Marker = ({ marker }) => <i className="wifi icon"></i>;
 
-const handleApiLoaded = (map, maps) => {
-  // use map and maps objects
-};
 
 class HotSpotMap extends React.Component {
 
 	constructor(props){
 		super(props);
-		this.state = {};
+		this.state = {
+			loadingMap: true,
+		};
 	}
 
-
-	componentDidMount(){
-		this.props.hideLoader();
+	hideLoader = () => {
+		this.setState({
+			loadingMap: false
+		})
 	};
 
-
 	renderContent() {
-		if (this.props.loadingMap) {
-			return(
-				<Loading message="loading map with your location" />
-			)
-		}
-		else if (this.props.noneFoundMsg) {
+		if (this.props.noneFoundMsg) {
 			return (
 				<div>{ this.props.noneFoundMsg }</div>
 			)
@@ -40,7 +34,7 @@ class HotSpotMap extends React.Component {
 				center={ this.props.center }
 				zoom={ this.props.zoom }
 				yesIWantToUseGoogleMapApiInternals
-				onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
+				onGoogleApiLoaded={ ({ map, maps }) => this.hideLoader() }
 			>
 			{ this.props.selHotspots.map( (hotspot, i) => {
 				return (
@@ -60,7 +54,10 @@ class HotSpotMap extends React.Component {
 
 	render(){
 		return(
-			<div className="hotspot-map">{ this.renderContent() }</div>
+			<div className="hotspot-map">
+				{ this.state.loadingMap ? <Loading message="loading map with your location" /> : null }
+				{ this.renderContent() }
+			</div>
 		)
 	};
 
