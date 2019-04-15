@@ -8,6 +8,7 @@ class App extends React.Component{
 	state = {
 		errorMsg: "",
 		welcomeMsg: "",
+		loadingMap: true,
 		userLatitude: null,
 		userLongitude: null,
 		center: {
@@ -32,6 +33,14 @@ class App extends React.Component{
 		);
 	};
 
+	hideLoader = () => {
+		console.log("app -> hideLoader called");
+		setTimeout(()=> {
+			this.setState({
+				loadingMap: false
+			})
+		}, 1500);
+	}
 
 	onFormSubmit = async (term) => {
 		this.setState({
@@ -92,34 +101,43 @@ class App extends React.Component{
 	}; // onFormSubmit
 
 
-	render(){
+
+	renderContent() {
 		if (this.state.errorMsg){
 			return(
 				<h3 className="geolocation-error">please unblock geolocation &hellip; <span>p</span><span>r</span><span>e</span><span>t</span><span>t</span><span>y</span> please?</h3>
 			)
 		}
-		else return(
-			<div className="ui container">
-				<SearchBar onFormSubmit={ this.onFormSubmit } />
-				<div className="ui grid">
-					<div className="ui row">
-						<div className="sixteen wide column">
-							<HotSpotMap
-								noneFoundMsg={ this.state.noneFoundMsg }
-								selHotspots={ this.state.selHotspots }
-								userLatitude={ this.state.userLatitude }
-								userLongitude={ this.state.userLongitude }
-								center={ this.state.center }
-								zoom={ this.state.zoom }
-							/>
-						</div>
+		else {
+			return (
+				<div className="ui container">
+					<SearchBar onFormSubmit={ this.onFormSubmit } />
+					<div className="map-wrapper">
+						<HotSpotMap
+							loadingMap={ this.state.loadingMap }
+							hideLoader={ this.hideLoader }
+							noneFoundMsg={ this.state.noneFoundMsg }
+							selHotspots={ this.state.selHotspots }
+							userLatitude={ this.state.userLatitude }
+							userLongitude={ this.state.userLongitude }
+							center={ this.state.center }
+							zoom={ this.state.zoom }
+						/>
 					</div>
 				</div>
 
-			</div>
+
+			)
+		}
+	};
+
+	render(){
+		return(
+			<div className="xyz">{ this.renderContent() }</div>
 		)
 	}
-} // App
+
+}; // App
 
 
 
