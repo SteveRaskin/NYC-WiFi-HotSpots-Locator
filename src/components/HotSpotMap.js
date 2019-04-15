@@ -16,9 +16,12 @@ class HotSpotMap extends React.Component {
 		super(props);
 		this.state = {};
 	}
+
+
 	componentDidMount(){
 		this.props.hideLoader();
 	};
+
 
 	renderContent() {
 		if (this.props.loadingMap) {
@@ -55,6 +58,7 @@ class HotSpotMap extends React.Component {
 			) // return
 		} // else
 	}; // renderContent
+
 
 	render(){
 		return(

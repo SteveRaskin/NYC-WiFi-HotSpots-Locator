@@ -31,74 +31,24 @@ body {
 	font-weight: bold;
 }
 
-/* .ui.relaxed.divided.list.hotspot-list {} */
-.hotspot-list p {
+/* .hotspot-list p {
 	font-size: 1.11rem;
-
 }
 .hotspot-list .hotspot {
 	padding: .3rem;
 	margin-bottom: .3rem;
 	border-bottom: 1px solid #ccc;
-}
+} */
 
-.dimmer { z-index: 0; }
 .ui.inverted.dimmer .ui.massive.loader { font-size: 1.35rem; }
 
 
 .hotspot-map {
 	width: 100%;
 	height: 100vh;
-	z-index: 1;
 }
-
-#map {
-	width: 100%;
-	height: 100%;
-	border: 3px solid cornflowerblue;
-	border-radius: 3px;
-}
-
 
 .icon.wifi {
 	color: blue;
 	font-size: 1.5rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*  */

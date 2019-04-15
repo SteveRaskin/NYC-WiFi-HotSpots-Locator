@@ -4,6 +4,7 @@ import nycOpenData from '../api/nycOpenData.js';
 import HotSpotMap from './HotSpotMap';
 
 
+
 class App extends React.Component{
 	state = {
 		errorMsg: "",
@@ -21,6 +22,7 @@ class App extends React.Component{
 		selHotspots: []
 	};
 
+
 	componentDidMount(){
 		window.navigator.geolocation.getCurrentPosition(
 			(position) => this.setState({
@@ -33,6 +35,7 @@ class App extends React.Component{
 		);
 	};
 
+
 	hideLoader = () => {
 		console.log("app -> hideLoader called");
 		setTimeout(()=> {
@@ -41,6 +44,7 @@ class App extends React.Component{
 			})
 		}, 1500);
 	}
+
 
 	onFormSubmit = async (term) => {
 		this.setState({
@@ -101,7 +105,6 @@ class App extends React.Component{
 	}; // onFormSubmit
 
 
-
 	renderContent() {
 		if (this.state.errorMsg){
 			return(
@@ -125,11 +128,10 @@ class App extends React.Component{
 						/>
 					</div>
 				</div>
-
-
 			)
 		}
 	};
+
 
 	render(){
 		return(
