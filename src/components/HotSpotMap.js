@@ -34,29 +34,27 @@ class HotSpotMap extends React.Component {
 				<div>{ this.props.noneFoundMsg }</div>
 			)
 		}
-		else {
-			return(
-				<GoogleMapReact
-					bootstrapURLKeys={{ key: "AIzaSyAwc3Zcz6uBV0VVvjXEhMthJEkkPeJV9_k" }}
-					center={ this.props.center }
-					zoom={ this.props.zoom }
-					yesIWantToUseGoogleMapApiInternals
-					onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
-				>
-				{ this.props.selHotspots.map( (hotspot, i) => {
-					return (
-						<Marker
-							key={ i }
-							lat={ hotspot.selHotspotLat }
-							lng={ hotspot.selHotspotLong }
-							marker={`HotSpot ${ i }`}
-						/>
-					)
-				})
-				}
-				</GoogleMapReact>
-			) // return
-		} // else
+		return(
+			<GoogleMapReact
+				bootstrapURLKeys={{ key: "AIzaSyAwc3Zcz6uBV0VVvjXEhMthJEkkPeJV9_k" }}
+				center={ this.props.center }
+				zoom={ this.props.zoom }
+				yesIWantToUseGoogleMapApiInternals
+				onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
+			>
+			{ this.props.selHotspots.map( (hotspot, i) => {
+				return (
+					<Marker
+						key={ i }
+						lat={ hotspot.selHotspotLat }
+						lng={ hotspot.selHotspotLong }
+						marker={`HotSpot ${ i }`}
+					/>
+				)
+			})
+			}
+			</GoogleMapReact>
+		) // return
 	}; // renderContent
 
 

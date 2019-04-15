@@ -16,7 +16,7 @@ class App extends React.Component{
 			lat: null,
 			lng: null,
 		},
-		zoom: 15,
+		zoom: 14,
 		term: null,
 		hotspots: [],
 		selHotspots: []
@@ -48,7 +48,7 @@ class App extends React.Component{
 	onFormSubmit = async (term) => {
 		this.setState({
 			noneFoundMsg: "",
-			zoom: 15
+			zoom: 14
 		});
 
 		const response = await nycOpenData.get(`?zip=${ term }`, {});
@@ -56,7 +56,7 @@ class App extends React.Component{
 		if (!response.data.length){
 			this.setState({
 				noneFoundMsg: "Uh-oh! We found zero WIFI Hot Spots in the zip code you entered. Are you sure that's a New York City zip code? Please try again.",
-				zoom: 15
+				zoom: 14
 			});
 		}
 		else {
