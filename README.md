@@ -2,6 +2,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### About 'Simons Foundation test app'
 
+The challenge:
+
 1) Please visit: https://data.cityofnewyork.us/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw
 
 2) Utilizing the API available (https://dev.socrata.com/foundry/data.cityofnewyork.us/24t3-xqyv), build an application that gives you the five NEAREST wi-fi hotspots depending on the postcode you enter. You can use something like this tool: https://www.geodatasource.com/developers/javascript for this calculation. You will need to utilize the latitude and longitude information provided in the file.
@@ -17,9 +19,7 @@ Please include README which also explains:
 2. What design choices you made, and why.
 3. If you had the option, what frame/libraries work you would use and not use and why.
 
-========================================================================================================================
-
-jg: clone repo, npm install
+============================================================
 
 
 ### How to install and run this project:
@@ -29,5 +29,42 @@ jg: clone repo, npm install
 	- Runs the app in the development mode.<br>
 	- Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm start`
+### If you had the option, what frame/libraries work you would use and not use and why.
+
+To put this concisely: I've been learning React (in the midst of a React course) and this challenge seemed an ideal opportunity to apply what I've learned so far and to stretch my knowledge of React. Indeed, it has been illuminating!
+
+
+### What design choices you made, and why.
+As I've been a html/css dev for quite some time I'm quite comfortable creating my own structure and classes, and typically eschew using design frameworks (e.g., Bootstrap, Foundation) where they're not already in use. However in this case, and again, because semantic-ui has been useful for other apps built in the React course, I opted to use it here as well. Of course the 'design' here is pretty simple but that works for my minimalist taste.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
