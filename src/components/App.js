@@ -37,7 +37,6 @@ class App extends React.Component{
 
 
 	hideLoader = () => {
-		console.log("app -> hideLoader called");
 		setTimeout(()=> {
 			this.setState({
 				loadingMap: false
