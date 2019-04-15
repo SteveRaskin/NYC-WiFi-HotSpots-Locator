@@ -1,6 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### About 'Simons Foundation test app'
+### About NYC WiFi HotSpots Locator
+
+NYC WiFi HotSpots Locator is an application which geolocates a user, and which can locate nearby WiFi HotSpots according to user-input zip code. The application is provided as a response to front-end engineering challenge from the Simons Foundation.
 
 The challenge:
 
